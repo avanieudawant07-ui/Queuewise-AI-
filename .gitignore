@@ -13,7 +13,7 @@ node_modules/
 !*.env.example
 
 # Build outputs
-dist/
+# dist/ allowed for Vercel deployment of frontend & backend
 build/
 *.tsbuildinfo
 
