@@ -26,7 +26,16 @@ app.use(express.json());
 // Rate limiter
 app.use("/api", apiLimiter);
 
-// Health check endpoint
+// Root & Health check endpoints
+app.get("/", (req, res) => {
+  res.json({
+    status: "ok",
+    service: "QueueWise AI Backend API",
+    health: "/health",
+    version: "1.0.0"
+  });
+});
+
 app.get("/health", (req, res) => {
   res.json({ status: "ok", service: "QueueWise AI Backend", timestamp: new Date().toISOString() });
 });
